@@ -25,7 +25,6 @@ SECRET_KEY = 'django-insecure-l**i@((@t))(xq#rc5gl3u$-(6h*h@u7ksqg^916u*t2z8m*u0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ASGI_APPLICATION = "realtime_chat.asgi.application"
 
 CHANNEL_LAYERS = {
     "default": {
@@ -44,11 +43,14 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'daphne',
     'django.contrib.staticfiles',
     'channels',
     'chat',
     
 ]
+ASGI_APPLICATION = "realtime_chat.asgi.application"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
